@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   bookmarks:
-    image: yourusername/my-bookmarks:latest
+    image: localhostmartin/my-bookmarks:latest
     container_name: private-bookmarks
     restart: unless-stopped
     ports:
