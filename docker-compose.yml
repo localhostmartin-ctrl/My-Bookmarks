@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bookmarks:
+    image: yourusername/my-bookmarks:latest
+    container_name: private-bookmarks
+    restart: unless-stopped
+    ports:
+      - "5000:5000"  # Format is HostPort:ContainerPort / 格式为 本地端口:容器端口
+    volumes:
+      # Maps the local file to the container's database file / 将本地文件映射到容器的数据库文件
+      - ./bookmarks.db:/app/bookmarks.db
+    environment:
+      - TZ=Asia/Shanghai  # Ensures the container uses your local time / 确保容器使用本地时间
